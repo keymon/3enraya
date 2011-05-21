@@ -1,5 +1,6 @@
 import models.Usuario;
 
+import org.apache.commons.mail.EmailException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,10 +10,10 @@ import controllers.Security;
 public class AuthenticationTest extends UnitTest {
 
 	@Before
-	public void loadData() {
+	public void loadData() throws EmailException {
 		// Fixtures.loadModels("data.yml");
 
-		Usuario prueba = new Usuario();
+		Usuario prueba = new Usuario(null, null, null);
 		prueba.login = "prueba";
 		prueba.password = "password";
 

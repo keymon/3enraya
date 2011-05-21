@@ -8,6 +8,10 @@ import play.mvc.*;
 
 import java.util.*;
 
+import org.apache.commons.mail.EmailException;
+
+import models.Usuario;
+
 public class Application extends Controller {
 
 	public static void index() {
@@ -16,7 +20,7 @@ public class Application extends Controller {
 
 	public static void registrarUsuario(@Required String login,
 			@Required String password, @Required @Equals("password") String passwordRepetido,
-			@Email @Required String correoElectronico) {
+			@Email @Required String correoElectronico) throws EmailException {
 	    if (!validation.hasErrors()) {
 	    	new Usuario(login, password, correoElectronico); 
 	        render("Application/envioCorreoConfirmacion.html");
