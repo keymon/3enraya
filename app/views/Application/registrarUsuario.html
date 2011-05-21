@@ -1,0 +1,39 @@
+#{ifErrors}
+        <p class="error">
+            All fields are required!
+        </p>
+#{/ifErrors}
+
+#{form @Application.registrarUsuario()}
+    <p>
+        <label for="login">Login: </label>
+        <input type="text" name="login" id="login" value="${params.login}" />
+        #{ifError 'login'} 
+    		#{error 'login' /}
+		#{/ifError}
+    </p>
+    <p>
+        <label for="password">Password: </label>
+        <input name="password" id="password"/>
+        #{ifError 'password'} 
+    		#{error 'password' /}
+		#{/ifError}
+    </p>
+    <p>
+        <label for="passwordRepetido">Password Repetido: </label>
+        <input name="passwordRepetido" id="passwordRepetido"/>
+        #{ifError 'passwordRepetido'} 
+    		#{error 'passwordRepetido' /}
+		#{/ifError}
+    </p>
+    <p>
+        <label for="correoElectronico">Correo Electrónico: </label>
+        <input name="correoElectronico" id="correoElectronico" value="${params.correoElectronico}"/>
+        #{ifError 'correoElectronico'} 
+    		#{error 'correoElectronico' /}
+		#{/ifError}
+    </p>
+    <p>
+        <input type="submit" value="Registrar" />
+    </p>
+#{/form}
