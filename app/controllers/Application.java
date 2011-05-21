@@ -8,8 +8,6 @@ import play.mvc.*;
 
 import java.util.*;
 
-import models.Usuario;
-
 public class Application extends Controller {
 
 	public static void index() {
